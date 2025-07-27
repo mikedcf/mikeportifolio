@@ -24,9 +24,9 @@ function trocarImagemLogo() {
   const img = document.querySelector('header .logo img'); // Select the specific image within the header logo
   // Check if the body has the 'tema_escuro' class
   if (document.body.classList.contains("tema_escuro")) {
-    img.src = "md.png"; // Replace with your dark theme logo path
+    img.src = "img/md.png"; // Replace with your dark theme logo path
   } else {
-    img.src = "md2.png"; // Original logo for the light theme
+    img.src = "img/md2.png"; // Original logo for the light theme
   }
 }
 
