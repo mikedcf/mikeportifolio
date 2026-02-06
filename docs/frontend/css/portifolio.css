@@ -42,6 +42,13 @@ header {
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+header.scrolled{
+    background: rgba(10, 10, 20, 0.75); /* escurece suave */
+    backdrop-filter: blur(10px);       /* efeito vidro */
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -169,14 +176,15 @@ header nav ul a {
 ===============================================
 ================   MAIN
 */
-
+a{
+    text-decoration: none;
+}
 
 main {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
-
 
 
 .boxCentro {
