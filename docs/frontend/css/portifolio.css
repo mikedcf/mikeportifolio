@@ -1,0 +1,1207 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Black+Ops+One&family=DM+Serif+Text:ital@0;1&family=Fugaz+One&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background: linear-gradient(180deg, #0f0122, #19023a, #3f0392, #5b01f5, #5c03f7);
+    background-attachment: fixed;
+    color: #fff;
+
+}
+
+
+
+/* 
+===============================================
+================   HEADER
+*/
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.15);
+}
+
+
+header nav ul {
+    display: flex;
+    gap: 8rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+.nav-links a {
+    position: relative;
+
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+
+header nav ul a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.boxIconTema button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.boxIconTema button:hover {
+    transform: scale(1.15);
+}
+
+
+.boxIconTema img {
+    width: 28px;
+}
+
+
+
+/* MENU HAMBURGUER */
+
+/* Botão hamburguer */
+.box-hamburguer{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.box-hamburguer i{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Menu flutuante */
+.menu-hamburguer{
+    position: absolute;
+    top: 150%;
+    left: 0;
+
+    background: #140028;
+    padding: 1.5rem;
+    border-radius: 12px;
+    z-index: 999;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Lista */
+.nav-menu ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nav-menu ul li a{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.3s ease;
+}
+
+.nav-menu ul li a:hover{
+    transform: scale(1.15);
+}
+
+
+
+/* 
+===============================================
+================   MAIN
+*/
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
+.boxCentro {
+    margin-top: 20rem;
+    margin-bottom: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxCentro h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 700;
+    text-align: center;
+}
+
+
+.topo {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80vh;
+    padding: 4rem 3rem;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.boxPerfil {
+    display: flex;
+    margin: auto;
+    margin-top: 0%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+}
+
+.boxPerfil img {
+    width: 60%;
+    height: 1%;
+    opacity: 0.9;
+
+}
+
+
+.sideEsquerdo,
+.sideDireita {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.sideEsquerdo {
+    margin-bottom: 10%;
+
+}
+
+.sideEsquerdo img,
+.sideDireita img {
+    width: clamp(40px, 6vw, 80px);
+    transition: transform 0.3s ease;
+}
+
+.sideEsquerdo img:nth-child(3) {
+    width: clamp(90px, 10vw, 170px);
+
+}
+
+
+.sideEsquerdo img:hover,
+.sideDireita img:hover {
+    transform: scale(1.15);
+}
+
+
+
+
+.sobre {
+    padding: 6rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+
+
+.boxTitulo {
+    width: 100%;
+}
+
+.boxTitulo h2 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-family: "Black Ops One", cursive;
+    text-decoration: underline;
+    text-underline-offset: 16px;
+}
+
+.boxTexto {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    text-align: center;
+}
+
+.boxTexto p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+
+.boxTexto button {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    transition: transform 0.3s ease;
+}
+
+.boxTexto button:hover {
+    transform: scale(1.15);
+}
+
+.boxTexto button img {
+    width: 18px;
+    height: auto;
+
+}
+
+
+
+
+.conteinerMap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 4rem;
+    gap: 4rem;
+}
+
+
+.boxMapEsquerdo,
+.boxMapDireito {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+}
+
+
+
+.boxMapEsquerdo ul,
+.boxMapDireito ul {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.boxMapEsquerdo ul li,
+.boxMapDireito ul li {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+}
+
+
+
+.boxMapEsquerdo ul li p,
+.boxMapDireito ul li p {
+    margin: 0;
+    line-height: 1.4;
+    text-align: left;
+    flex: 1;
+    min-width: 0;
+}
+
+
+
+.boxMapEsquerdo ul li img,
+.boxMapDireito ul li img {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+
+.boxMapEsquerdo ul li img:hover,
+.boxMapDireito ul li img:hover {
+    transform: scale(1.15);
+}
+
+
+.boxMapEsquerdo {
+    padding: 5rem;
+    width: 600px;
+}
+
+.boxMapEsquerdo ul {
+    gap: 14rem;
+}
+
+.boxMapEsquerdo ul li {
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.boxMapEsquerdo ul li img {
+    margin-left: auto;
+}
+
+
+
+.boxMapDireito {
+    margin-top: 7%;
+    padding: 7rem 1rem;
+}
+
+.boxMapDireito ul {
+    gap: 15rem;
+}
+
+
+
+.boxLinha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+
+.boxLinha img {
+    height: 80rem;
+    position: relative;
+    z-index: 0;
+}
+
+.boxDesen {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+}
+
+
+.frontend {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.frontend-icon {
+    display: flex;
+    gap: 3rem;
+
+}
+
+
+.backend {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.backend-icon {
+    display: flex;
+    gap: 3rem;
+
+}
+
+
+.backend-icon img[src*="../img/railway-logo.svg"] {
+    width: 10rem;
+}
+
+.boxMapEsquerdo ul li:nth-child(3) {
+    gap: 2rem;
+}
+
+
+
+
+/* -------  DEV ANIMATION ------ */
+
+
+.conteinerMap {
+    position: relative;
+    padding-bottom: 300px;
+}
+
+.dev-animation-container {
+    position: absolute;
+    flex-direction: column;
+    width: 40%;
+    margin-left: 30%;
+    bottom: 11.4rem;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-start;
+    gap: -11rem;
+    z-index: 10;
+}
+
+.dev-letter {
+    width: 120px;
+    height: auto;
+    display: block;
+    will-change: transform;
+}
+
+
+.letter-d {
+    margin-top: 0px;
+    width: 11rem;
+}
+
+.letter-e {
+    margin-top: -12px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 11rem;
+    position: relative;
+    z-index: 10;
+}
+
+.letter-v {
+    margin-top: 0px;
+    margin-left: auto;
+    width: 11rem;
+}
+
+
+/* 
+-=-=-==-=-=-=-=-=-=-=-==-=-=-=-=-=-=-==-
+---------------  PROJETOS 
+*/
+
+
+.projetos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.projetos .boxTitulo {
+    display: flex;
+    margin: auto;
+    width: 100%;
+
+}
+
+.boxProjetos {
+    display: flex;
+    margin-top: 5%;
+    flex-direction: row;
+    width: 100%;
+    height: 30rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.arrowDireita,
+.arrowEsquerda {
+    display: flex;
+    width: 5rem;
+    height: 5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+
+.arrowDireita {
+    margin-left: 5%;
+}
+
+.arrowDireita img,
+.arrowEsquerda img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+}
+
+.arrowEsquerda {
+    margin-right: 5%;
+}
+
+.sliderProjetos {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    width: 90rem;
+    height: 28rem;
+    background-color: #ffffff6e;
+    border: 1px solid #ffffff;
+    border-radius: 2rem;
+    filter: drop-shadow(0 0 10px #ffffff);
+    backdrop-filter: blur(10px);
+}
+
+.nomeProjeto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+    width: 75rem;
+    height: 15rem;
+
+}
+
+
+h3 {
+    font-size: 2.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+
+.nomeProjeto p {
+    font-size: 1.5rem;
+}
+
+
+.boxTecnologias {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxTecnologias button {
+    background: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.boxTecnologias button img {
+    width: 18px;
+    height: auto;
+}
+
+
+
+
+
+/* 
+===============================================
+================   FOOTER
+*/
+
+
+
+
+footer {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+
+}
+
+.boxFooter {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+
+.contato {
+    display: flex;
+    margin: auto;
+    margin-left: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+}
+
+
+
+.iconContatos {
+    display: flex;
+}
+
+.iconContatos ul {
+    display: flex;
+    gap: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.iconContatos ul li:hover {
+    transform: scale(1.15);
+}
+
+.textoInfinito {
+    display: flex;
+    width: max-content;
+}
+
+
+.textoInfinito h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    background: linear-gradient(90deg, #b217fa, #17FA98, #2926e9, #4c0486);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-size: 12vw;
+    mix-blend-mode: color-dodge;
+    animation: textoInfinito 10s infinite linear;
+    padding-left: 8vw;
+    text-decoration: none;
+
+}
+
+
+@keyframes textoInfinito {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* 
+===============================================
+================   TEMA 
+*/
+
+.theme-transition {
+    position: fixed;
+    inset: 0;
+    /* background: #f5f5ff; */
+    background: #6805d8;
+    clip-path: circle(0% at 50% 50%);
+    pointer-events: none;
+    z-index: 99999;
+}
+
+
+
+body.light-theme {
+    background: linear-gradient(180deg, #f2f3ff, #e6e8ff, #dcdfff);
+    /* background: linear-gradient(180deg, #ffffff, #969597, #360777, #fdfdff); */
+    color: #111;
+}
+
+body.light-theme a {
+    text-decoration: none;
+
+}
+
+body.light-theme button {
+    color: #111;
+
+}
+
+body.light-theme header nav ul a {
+    color: #111;
+}
+
+body.light-theme .nav-links a::after {
+    background-color: #111;
+}
+
+/* 
+===============================================
+================   PRELOADER
+*/
+
+
+#preloader {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    background: linear-gradient(180deg, #05000C, #160133, #19013a, #4b05c5);
+
+
+
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        width: 40vw;
+        height: auto;
+
+        path {
+            fill: rgba(41, 1, 78, 0.364);
+            stroke: rgb(255, 255, 255);
+            stroke-dasharray: 640;
+            stroke-dashoffset: 640;
+        }
+    }
+}
+
+.logo-text {
+    font-family: 'Black Ops One', cursive;
+    fill: #12a8ff;
+}
+
+.symbol {
+    font-family: 'Arial', sans-serif;
+    fill: #12a8ff;
+    opacity: 0.85;
+}
+
+
+
+/* 
+===============================================
+================   RESPONSIVIDADE
+*/
+
+@media (max-width: 486px) {
+
+    .logo{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .box-hamburguer{
+        display: flex;
+    }
+
+    .nav-links{
+        display: none;
+    }
+
+
+    .nomeProjeto {
+        width: 100vw; 
+        max-width: 100%;
+        height: auto;
+        padding: 20px;
+        box-sizing: border-box; 
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .nomeProjeto p {
+        width: 100%;
+        font-size: 1.2rem;
+        
+        
+        white-space: normal !important; 
+        display: block; 
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+        
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    h3{
+        font-size: 2rem;
+    }
+
+
+    .arrowDireita{
+        display: none;
+    }
+
+    .arrowEsquerda{
+        display: none;
+    }
+
+
+
+    footer {
+        gap: 2rem;
+        padding-bottom: 1vw;
+        height: 10%;
+    }
+
+    .boxFooter{
+        height: 10%;
+        padding:  7vw 7vw 8vw 0vw;
+    }
+
+    .contato {
+        gap: 2vw;
+
+    }
+
+    .iconContatos ul a li img{
+        width: 25px;
+        height: 25px;
+    }
+    
+    .iconContatos ul {
+        gap: 2%;
+        justify-content: center;
+    }
+
+    .textoInfinito h3 {
+        font-size: 18vw;
+        padding-left: 6vw;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .nomeProjeto {
+        width: 45rem;
+
+    }
+
+    .conteinerMap {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1.5rem;
+        gap: 3rem;
+    }
+
+
+    /* Colunas viram uma só */
+    .boxMapEsquerdo,
+    .boxMapDireito {
+        display: flex;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .boxMapEsquerdo ul,
+    .boxMapDireito ul {
+        gap: 3.5rem;
+    }
+
+
+
+    /* Cada item empilhado */
+    .boxMapEsquerdo ul li,
+    .boxMapDireito ul li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .boxMapEsquerdo ul li .boxDesen {
+        flex-direction: column-reverse;
+        margin-left: auto;
+    }
+
+    /* Ícones em cima */
+    .boxMapEsquerdo ul li img,
+    .boxMapDireito ul li img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 65px;
+        height: 65px;
+    }
+
+    /* Texto abaixo */
+    .boxMapEsquerdo ul li p,
+    .boxMapDireito ul li p {
+        margin-left: 15%;
+        text-align: center;
+        font-size: 1.15rem;
+        line-height: 1.4;
+    }
+
+    /* Linha central fora */
+    .boxLinha {
+        display: none;
+    }
+
+    /* DEV animation  */
+    .dev-animation-container {
+        display: none;
+    }
+
+    /* Box do desenvolvimento web */
+    .boxDesen {
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .frontend,
+    .backend {
+        width: 100%;
+    }
+
+    .frontend-icon,
+    .backend-icon {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .backend-icon img[src*="railway-logo"] {
+        width: 6rem;
+    }
+
+
+
+
+    /*FOOTER */
+
+    footer {
+        gap: 2.5rem;
+        padding-bottom: 5rem;
+    }
+
+    .contato {
+        gap: 2.5rem;
+    }
+
+    .iconContatos ul {
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .textoInfinito h3 {
+        font-size: 18vw;
+        padding-left: 6vw;
+    }
+
+    
+}
+
+@media (max-width: 1024px) {
+
+    .conteinerMap {
+        padding: 2rem 2rem;
+        gap: 1.5rem;
+    }
+
+    /* COLUNAS MAIS CONTROLADAS */
+    .boxMapEsquerdo {
+        width: 380px;
+        padding: 2rem 1rem;
+    }
+
+    .boxMapDireito {
+        width: 380px;
+        padding: 2rem 1rem;
+    }
+
+    /* TEXTOS ALINHADOS DE VERDADE */
+    .boxMapEsquerdo ul li {
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .boxMapEsquerdo ul li p {
+        max-width: 280px;
+    }
+
+    .boxMapDireito ul li {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .boxMapDireito ul li p {
+        max-width: 280px;
+    }
+
+    /* Menos espaço entre etapas */
+    .boxMapEsquerdo ul {
+        gap: 8rem;
+    }
+
+    .boxMapDireito ul {
+        gap: 9rem;
+    }
+
+    /* Itens um pouco menores */
+    .boxMapEsquerdo ul li,
+    .boxMapDireito ul li {
+        font-size: 1.2rem;
+        gap: 1.5rem;
+    }
+
+    .boxMapEsquerdo ul li img,
+    .boxMapDireito ul li img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .boxDesen {
+        width: 100%;
+    }
+
+
+
+    /* ESPAÇOS MENORES */
+    .boxMapEsquerdo ul {
+        gap: 6rem;
+    }
+
+    .boxMapDireito ul {
+        gap: 6rem;
+    }
+
+    /* LINHA MAIS BAIXA */
+    .boxLinha img {
+        height: 45rem;
+    }
+
+    /* DEV CENTRAL CORRIGIDO */
+    .dev-animation-container {
+        position: absolute;
+        left: auto;
+        right: auto;
+        transform: translateX(-50%);
+        bottom: -6rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .dev-letter {
+        width: 7rem;
+    }
+
+    .letter-d,
+    .letter-e,
+    .letter-v {
+        margin: 0;
+    }
+
+
+
+    /*FOOTER */
+
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 7%;
+        width: 100%;
+        gap: 6rem;
+        position: relative;
+        z-index: 10;
+
+    }
+
+    .contato {
+        min-height: 20vh;
+        height: auto;
+        overflow: visible;
+        padding-bottom: 0rem;
+        margin: auto;
+        margin-left: auto;
+        gap: 4rem;
+    }
+
+    .boxFooter {
+        gap: 11rem;
+    }
+}
