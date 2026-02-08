@@ -20,6 +20,7 @@ body {
     background: linear-gradient(180deg, #0f0122, #19023a, #3f0392, #5b01f5, #5c03f7);
     background-attachment: fixed;
     color: #fff;
+    min-height: 100vh;
 
 }
 
@@ -45,9 +46,11 @@ header {
     transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-header.scrolled{
-    background: rgba(10, 10, 20, 0.75); /* escurece suave */
-    backdrop-filter: blur(10px);       /* efeito vidro */
+header.scrolled {
+    background: rgba(10, 10, 20, 0.75);
+    /* escurece suave */
+    backdrop-filter: blur(10px);
+    /* efeito vidro */
     -webkit-backdrop-filter: blur(10px);
 }
 
@@ -125,20 +128,24 @@ header nav ul a {
 /* MENU HAMBURGUER */
 
 /* Botão hamburguer */
-.box-hamburguer{
+.box-hamburguer {
     display: none;
     align-items: center;
     justify-content: center;
     position: relative;
 }
 
-.box-hamburguer i{
+.box-hamburguer i {
     font-size: 1.5rem;
     cursor: pointer;
 }
 
+.box-hamburguer button i {
+    color: #fff;
+}
+
 /* Menu flutuante */
-.menu-hamburguer{
+.menu-hamburguer {
     position: absolute;
     top: 150%;
     left: 0;
@@ -153,20 +160,20 @@ header nav ul a {
 }
 
 /* Lista */
-.nav-menu ul{
+.nav-menu ul {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.nav-menu ul li a{
+.nav-menu ul li a {
     display: flex;
     align-items: center;
     gap: 12px;
     transition: transform 0.3s ease;
 }
 
-.nav-menu ul li a:hover{
+.nav-menu ul li a:hover {
     transform: scale(1.15);
 }
 
@@ -176,7 +183,7 @@ header nav ul a {
 ===============================================
 ================   MAIN
 */
-a{
+a {
     text-decoration: none;
 }
 
@@ -617,6 +624,13 @@ main {
     border-radius: 2rem;
     filter: drop-shadow(0 0 10px #ffffff);
     backdrop-filter: blur(10px);
+
+}
+
+.sliderProjetos {
+    width: 100%;
+    max-width: 90rem;
+    height: 28rem;
 }
 
 .nomeProjeto {
@@ -631,6 +645,14 @@ main {
 
 }
 
+.nomeProjeto {
+    width: 100%;
+    max-width: 75rem;
+    height: auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
 
 h3 {
     font-size: 2.5rem;
@@ -644,8 +666,13 @@ h3 {
 
 .nomeProjeto p {
     font-size: 1.5rem;
+    line-height: 1.6;
+    width: 100%;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
 }
-
 
 .boxTecnologias {
     display: flex;
@@ -671,6 +698,33 @@ h3 {
     height: auto;
 }
 
+/* SWIPE TOUCH */
+.sliderProjetos {
+    touch-action: pan-y;
+}
+
+
+.dotsCarrossel {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffffff70;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #fff;
+    transform: scale(1.4);
+}
 
 
 
@@ -686,6 +740,7 @@ h3 {
 footer {
 
     display: flex;
+    min-height: 80vh;
     flex-direction: column;
     align-items: center;
     margin-top: 7%;
@@ -809,6 +864,10 @@ body.light-theme .nav-links a::after {
     background-color: #111;
 }
 
+body.light-theme header .box-hamburguer button i {
+    background-color: #111;
+}
+
 /* 
 ===============================================
 ================   PRELOADER
@@ -858,103 +917,581 @@ body.light-theme .nav-links a::after {
 ================   RESPONSIVIDADE
 */
 
-@media (max-width: 486px) {
 
-    .logo{
-        margin-left: auto;
-        margin-right: auto;
+
+@media (max-width: 360px) {
+
+    .topo {
+        padding: 1.5rem 1rem;
+        gap: 1.2rem;
     }
 
-    .box-hamburguer{
+    .sideEsquerdo img,
+    .sideDireita img {
+        width: 36px;
+    }
+
+    .boxPerfil img {
+        max-width: 250px;
+    }
+
+    .boxTexto p {
+        font-size: 0.9rem;
+    }
+
+    .projetos {
+        padding: 3rem 1rem;
+    }
+
+    .sliderProjetos {
+        height: 180px;
+        border-radius: 1.2rem;
+    }
+
+    .nomeProjeto {
+        padding: 1rem;
+        height: auto;
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    .nomeProjeto p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        width: 100%;
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .boxTecnologias button {
+        font-size: 0.95rem;
+    }
+
+    .boxMapEsquerdo ul li img,
+    .boxMapDireito ul li img {
+        width: 42px;
+        height: 42px;
+    }
+
+    footer {
+        min-height: 122vh;
+        padding-bottom: 4rem;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .topo {
+        padding: 1.8rem 1.2rem;
+        gap: 1.5rem;
+    }
+
+    .sideEsquerdo img,
+    .sideDireita img {
+        width: 40px;
+    }
+
+    .boxPerfil img {
+        max-width: 280px;
+    }
+
+    .boxTexto p {
+        font-size: 0.95rem;
+    }
+
+    .projetos {
+        padding: 3rem 1rem;
+    }
+
+    .sliderProjetos {
+        height: 220px;
+    }
+
+    .nomeProjeto {
+        padding: 1rem;
+        height: auto;
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .nomeProjeto p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        width: 100%;
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+
+    .boxTecnologias button {
+        font-size: 1rem;
+    }
+
+    .boxMapEsquerdo ul li img,
+    .boxMapDireito ul li img {
+        width: 45px;
+        height: 45px;
+    }
+
+    footer {
+        padding: 1.2rem 0.8rem;
+        gap: 1.2rem;
+    }
+
+    footer {
+        padding: 1rem 0.7rem;
+        gap: 1rem;
+    }
+
+    .iconContatos ul {
+        flex-direction: column;
+    }
+
+
+
+    .textoInfinito h3 {
+        font-size: 13vw;
+    }
+
+    .textoInfinito h3 {
+        font-size: 14vw;
+    }
+}
+
+@media (max-width: 486px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    /* ===== TOPO ===== */
+
+    .topo {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+        min-height: auto;
+    }
+
+    .sideEsquerdo,
+    .sideDireita {
+        margin-top: 1rem;
+        gap: 1.5rem;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .sideEsquerdo img,
+    .sideDireita img {
+        width: 45px;
+    }
+
+    .boxPerfil img {
+        width: 100%;
+        height: auto;
+        max-width: 320px;
+    }
+
+    /* ===== HEADER ===== */
+
+    .logo {
+        margin: auto;
+    }
+
+    .box-hamburguer {
         display: flex;
     }
 
-    .nav-links{
+    .nav-links {
         display: none;
     }
 
+    /* ===== SOBRE ===== */
+
+    .sobre {
+        padding: 3rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .boxTexto p {
+        font-size: 1rem;
+    }
+
+    /* ===== PROJETOS ===== */
+
+    .boxProjetos {
+        width: 100%;
+        height: auto;
+    }
+
+    .arrowDireita,
+    .arrowEsquerda {
+        display: none;
+    }
+
+    .projetos {
+        padding: 3rem 1rem;
+    }
+
+    .sliderProjetos {
+        width: 100%;
+        height: 220px;
+        border-radius: 1.5rem;
+    }
 
     .nomeProjeto {
-        width: 100vw; 
+        width: 100%;
         max-width: 100%;
+        padding: 1.2rem;
         height: auto;
-        padding: 20px;
-        box-sizing: border-box; 
-        
-        display: flex;
+        gap: 1.5rem;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .nomeProjeto p {
+        font-size: 1rem;
+        line-height: 1.5;
+        width: 100%;
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    h3 {
+        font-size: 1.7rem;
+    }
+
+    .boxTecnologias button {
+        font-size: 1.1rem;
+    }
+
+    /* ===== MAPA / SKILLS ===== */
+
+    .conteinerMap {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        padding: 2rem 1.2rem;
+        gap: 2.5rem;
+    }
+
+    .boxMapEsquerdo,
+    .boxMapDireito {
+        width: 100%;
+        padding: 0;
+    }
+
+    .boxMapEsquerdo ul,
+    .boxMapDireito ul {
+        gap: 2.5rem;
+    }
+
+    .boxMapEsquerdo ul li,
+    .boxMapDireito ul li {
+        gap: 1rem;
+        font-size: 1rem;
+    }
+
+    .boxMapEsquerdo ul li img,
+    .boxMapDireito ul li img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .boxLinha,
+    .dev-animation-container {
+        display: none;
+    }
+
+    /* ===== FOOTER ===== */
+
+    footer {
+        margin-top: 2rem;
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .iconContatos ul {
+        flex-direction: column;
+    }
+
+    .textoInfinito h3 {
+        font-size: 13vw;
+    }
+
+    .textoInfinito h3 {
+        font-size: 14vw;
+    }
+
+    .boxFooter {
+        gap: 1.5rem;
+    }
+
+    .contato {
+        gap: 1.2rem;
+    }
+
+    .iconContatos {
+        margin-bottom: 0.5rem;
+    }
+
+    .textoInfinito {
+        margin-top: 0;
+    }
+
+    .textoInfinito h3 {
+        font-size: 15vw;
+        padding-left: 4vw;
+        line-height: 1;
+    }
+
+    footer {
+        min-height: 122vh;
+        padding-bottom: 4rem;
+    }
+}
+
+@media (max-width: 488px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    /* ===== TOPO ===== */
+
+    .topo {
+        flex-direction: column;
         gap: 2rem;
+        padding: 2rem 1.5rem;
+        min-height: auto;
+    }
+
+    .sideEsquerdo,
+    .sideDireita {
+        margin-top: 1rem;
+        gap: 1.5rem;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .sideEsquerdo img,
+    .sideDireita img {
+        width: 45px;
+    }
+
+    .boxPerfil img {
+        width: 100%;
+        height: auto;
+        max-width: 320px;
+    }
+
+    /* ===== HEADER ===== */
+
+    .logo {
+        margin: auto;
+    }
+
+    .box-hamburguer {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    /* ===== SOBRE ===== */
+
+    .sobre {
+        padding: 3rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .boxTexto p {
+        font-size: 1rem;
+    }
+
+    /* ===== PROJETOS ===== */
+
+    .boxProjetos {
+        width: 100%;
+        height: auto;
+    }
+
+    .arrowDireita,
+    .arrowEsquerda {
+        display: none;
+    }
+
+    .projetos {
+        padding: 3rem 1rem;
+    }
+
+    .sliderProjetos {
+        width: 100%;
+        height: 220px;
+        border-radius: 1.5rem;
+    }
+
+    .nomeProjeto {
+        width: 100%;
+        max-width: 100%;
+        padding: 1.2rem;
+        height: auto;
+        gap: 1.5rem;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .nomeProjeto p {
+        font-size: 1rem;
+        line-height: 1.5;
+        width: 100%;
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    h3 {
+        font-size: 1.7rem;
+    }
+
+    .boxTecnologias button {
+        font-size: 1.1rem;
+    }
+
+    /* ===== MAPA / SKILLS ===== */
+
+    .conteinerMap {
+        flex-direction: column;
+        padding: 2rem 1.2rem;
+        gap: 2.5rem;
+    }
+
+    .boxMapEsquerdo,
+    .boxMapDireito {
+        width: 100%;
+        padding: 0;
+    }
+
+    .boxMapEsquerdo ul,
+    .boxMapDireito ul {
+        gap: 2.5rem;
+    }
+
+    .boxMapEsquerdo ul li,
+    .boxMapDireito ul li {
+        gap: 1rem;
+        font-size: 1rem;
+    }
+
+    .boxMapEsquerdo ul li img,
+    .boxMapDireito ul li img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .boxLinha,
+    .dev-animation-container {
+        display: none;
+    }
+
+    /* ===== FOOTER ===== */
+
+    
+
+
+    .iconContatos ul {
+        flex-direction: column;
+    }
+
+    .textoInfinito h3 {
+        font-size: 13vw;
+    }
+
+    .textoInfinito h3 {
+        font-size: 14vw;
+    }
+
+    .boxFooter {
+        gap: 1.5rem;
+    }
+
+    .contato {
+        gap: 1.2rem;
+    }
+
+    .iconContatos {
+        margin-bottom: 0.5rem;
+    }
+
+    .textoInfinito {
+        margin-top: 0;
+    }
+
+    .textoInfinito h3 {
+        font-size: 15vw;
+        padding-left: 4vw;
+        line-height: 1;
+    }
+
+    footer {
+        min-height: 129vh;
+        padding-bottom: 4rem;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+
+    .nomeProjeto {
+        width: 100%;
+        max-width: 45rem;
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
     .nomeProjeto p {
         width: 100%;
-        font-size: 1.2rem;
-        
-        
-        white-space: normal !important; 
-        display: block; 
-        overflow-wrap: break-word;
+        max-width: 100%;
         word-wrap: break-word;
-        word-break: break-word;
-        
-        line-height: 1.6;
-        margin: 0;
-    }
-
-    h3{
-        font-size: 2rem;
-    }
-
-
-    .arrowDireita{
-        display: none;
-    }
-
-    .arrowEsquerda{
-        display: none;
-    }
-
-
-
-    footer {
-        gap: 2rem;
-        padding-bottom: 1vw;
-        height: 10%;
-    }
-
-    .boxFooter{
-        height: 10%;
-        padding:  7vw 7vw 8vw 0vw;
-    }
-
-    .contato {
-        gap: 2vw;
-
-    }
-
-    .iconContatos ul a li img{
-        width: 25px;
-        height: 25px;
-    }
-    
-    .iconContatos ul {
-        gap: 2%;
-        justify-content: center;
-    }
-
-    .textoInfinito h3 {
-        font-size: 18vw;
-        padding-left: 6vw;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .nomeProjeto {
-        width: 45rem;
-
+        overflow-wrap: break-word;
+        box-sizing: border-box;
     }
 
     .conteinerMap {
@@ -1058,6 +1595,7 @@ body.light-theme .nav-links a::after {
 
     footer {
         gap: 2.5rem;
+        padding: 1rem 0.7rem;
         padding-bottom: 5rem;
     }
 
@@ -1076,8 +1614,8 @@ body.light-theme .nav-links a::after {
         padding-left: 6vw;
     }
 
-    
 }
+
 
 @media (max-width: 1024px) {
 
@@ -1196,6 +1734,7 @@ body.light-theme .nav-links a::after {
         gap: 6rem;
         position: relative;
         z-index: 10;
+        min-height:83vh;
 
     }
 
@@ -1211,5 +1750,96 @@ body.light-theme .nav-links a::after {
 
     .boxFooter {
         gap: 11rem;
+    }
+}
+
+/* AJUSTE DO HEADER HAMBURGUER */
+@media (min-width: 487px) and (max-width: 999px) {
+    /* ===== HEADER ===== */
+
+    .logo {
+        margin: auto;
+    }
+
+    .box-hamburguer {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+/* AJUSTE DO TOPO */
+@media (min-width: 487px) and (max-width: 804px) {
+    /* ===== TOPO ===== */
+
+    .topo {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+        min-height: auto;
+    }
+
+    .sideEsquerdo,
+    .sideDireita {
+        margin-top: 1rem;
+        gap: 1.5rem;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .sideEsquerdo img,
+    .sideDireita img {
+        width: 45px;
+    }
+
+    .boxPerfil img {
+        width: 100%;
+        height: auto;
+        max-width: 320px;
+    }
+
+}
+
+@media (min-width: 100px) and (max-width: 485px){
+
+
+    footer {
+        min-height: 110vh;
+    }
+
+    .iconContatos ul {
+        flex-direction: column;
+    }
+
+    .textoInfinito h3 {
+        font-size: 13vw;
+    }
+
+    .textoInfinito h3 {
+        font-size: 14vw;
+    }
+
+    .boxFooter {
+        gap: 1.5rem;
+    }
+
+    .contato {
+        gap: 1.2rem;
+    }
+
+    .iconContatos {
+        margin-bottom: 0.5rem;
+    }
+
+    .textoInfinito {
+        margin-top: 0;
+    }
+
+    .textoInfinito h3 {
+        font-size: 15vw;
+        padding-left: 4vw;
+        line-height: 1;
     }
 }

@@ -49,30 +49,25 @@ data = [
         categoria: "web",
         link: "https://mikedcf.github.io/patinhas-seguras/"
     },
-    {
-        titulo: "AXEL",
-        descricao: "Assistente virtual para ajudar no dia a dia e open source para ser utilizado em qualquer sistema",
-        imagem: "https://i.ibb.co/fVqpQKNN/Axel.webp",
-        categoria: "IA",
-        link: ""
-    }
 ]
 
 let number = 0;
-document.getElementById("arrowEsquerda").addEventListener("click", async () => {
+
+// Funções nomeadas para poder remover os event listeners depois
+async function cliqueEsquerda() {
     // passa o slider
     number += 1;   
     await carrossel();
-    
-});
+}
 
-document.getElementById("arrowDireita").addEventListener("click", async () => {
+async function cliqueDireita() {
     // volta o slider
     number -= 1;
     await carrossel();
-    
-    
-});
+}
+
+document.getElementById("arrowEsquerda").addEventListener("click", cliqueEsquerda);
+document.getElementById("arrowDireita").addEventListener("click", cliqueDireita);
 
 async function carrossel(){
     const containerSlider = document.getElementById("sliderProjetos");
@@ -81,18 +76,14 @@ async function carrossel(){
     const setaDireita = document.getElementById("arrowDireita")
     const setaEsquerda = document.getElementById("arrowEsquerda")
 
-    recProjeto(data[Number(number)].link);
-
     if(number > data.length -1){
-        number = number - 1;
-        setaEsquerda.removeEventListener("click", cliqueEsquerda);
-
-
+        number = data.length - 1;
+        return;
     }
 
     if(number < 0){
         number = 0;
-        setaDireita.removeEventListener("click", cliqueDireita);
+        return;
     }
 
 
@@ -114,13 +105,81 @@ async function carrossel(){
                 duration: 0.4,
                 ease: "power2.out"
             });
+            atualizarDots();
         }
     });
 }
 
 function recProjeto(link){
-    window.open(link, "_blank");
+    console.log(link);
+    // Só abre o link se ele não estiver vazio
+    if(link && link.trim() !== ""){
+        window.open(link, "_blank");
+    }
 }
+
+
+
+const dotsContainer = document.getElementById("dotsCarrossel");
+
+function criarDots() {
+    dotsContainer.innerHTML = "";
+
+    data.forEach((_, index) => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+
+        dot.addEventListener("click", async () => {
+            number = index;
+            await carrossel();
+            atualizarDots();
+        });
+
+        dotsContainer.appendChild(dot);
+    });
+
+    atualizarDots();
+}
+
+function atualizarDots() {
+    const dots = document.querySelectorAll(".dot");
+
+    dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === number);
+    });
+}
+
+
+const slider = document.getElementById("sliderProjetos");
+
+let startX = 0;
+let endX = 0;
+const minSwipe = 70; // distância mínima pra considerar swipe
+
+slider.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchmove", (e) => {
+    endX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend", async () => {
+    const diff = startX - endX;
+
+    // swipe para esquerda → próximo
+    if (diff > minSwipe) {
+        number += 1;
+        await carrossel();
+    }
+
+    // swipe para direita → anterior
+    if (diff < -minSwipe) {
+        number -= 1;
+        await carrossel();
+    }
+});
+
 // SISTEMA DE TEMA
 
 let darkMode = true;
@@ -217,6 +276,7 @@ btnTheme.addEventListener("click", (e) => {
 // MENU HAMBURGUER
 let openMenu = false;
 document.getElementById("btnHamburguer").addEventListener("click", (e) => {
+    console.log("ok");
     e.stopPropagation(); // clicar dentro do menu não fecha
     document.getElementById("menuhumburguer").classList.toggle("active");
 });
@@ -848,3 +908,5 @@ document.addEventListener("click", () => {
 
 animarPagina()
 carrossel();
+criarDots();
+
