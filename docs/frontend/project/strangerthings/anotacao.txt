@@ -1,0 +1,46 @@
+1- Entender negocio / publico alvo
+2- wireframe
+3-
+4-
+5-
+6-
+7-
+8-
+
+UI -> Diagramação
+Design detalhes
+
+1062855@senacminas.edu.br
+
+
+
+
+atalhos
+
+grids - ctrl + 
+
+Agrupar sub grupo = shift + A
+
+colocar comentario - tecla "c"
+
+
+OCULTAR GRID -  SHIFT + G
+
+para duplicar rapido - ctrl + d
+
+ctrl - zoom
+
+p - caneta
+t- texto
+o - formatos
+r - eclipse ou retangulos
+f - frame
+sfith + a  
+
+BENGUIAT
+
+
+
+gsap.to = estava de uma forma e vai para OCULTAR
+
+gsap.from = 

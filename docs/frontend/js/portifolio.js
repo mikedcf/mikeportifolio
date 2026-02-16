@@ -49,6 +49,14 @@ data = [
         categoria: "web",
         link: "https://mikedcf.github.io/patinhas-seguras/"
     },
+    {
+        titulo: "Stranger Things",
+        descricao: "Projeto feito DEVarts melhorias de designer e animações com GSAP",
+        imagem: "https://i.ibb.co/3yRRgfb9/strangerthings.png",
+        categoria: "web",
+        link: "https://mikedcf.github.io/mikeportifolio/frontend/project/strangerthings/html/strangerthings.html"
+        
+    },
 ]
 
 let number = 0;
