@@ -55,7 +55,6 @@ data = [
         imagem: "https://i.ibb.co/3yRRgfb9/strangerthings.png",
         categoria: "web",
         link: "https://mikedcf.github.io/mikeportifolio/frontend/project/strangerthings/html/strangerthings.html"
-        
     },
 ]
 
